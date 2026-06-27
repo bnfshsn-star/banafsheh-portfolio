@@ -1,0 +1,394 @@
+@import "tailwindcss";
+
+/* ==========================
+          FONT
+========================== */
+
+@font-face {
+  font-family: "Vazir";
+  src: url("/fonts/Vazir-Light.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("/fonts/Vazir-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("/fonts/Vazir-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Vazir";
+  src: url("/fonts/Vazir-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+/* ==========================
+        RESET
+========================== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  min-height:100vh;
+
+  overflow-x:hidden;
+
+  font-family:"Vazir",sans-serif;
+
+  color:white;
+
+  background:
+  linear-gradient(
+      rgba(10,10,18,.45),
+      rgba(8,8,15,.72)
+  ),
+  url("/images/Untitled-3.jpg");
+
+  background-size:cover;
+
+  background-position:center;
+
+  background-repeat:no-repeat;
+
+  background-attachment:fixed;
+
+}
+
+/* ==========================
+      BACKGROUND LIGHT
+========================== */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+background:
+
+radial-gradient(circle at 15% 20%,
+rgba(168,85,247,.20),
+transparent 35%),
+
+radial-gradient(circle at 85% 15%,
+rgba(236,72,153,.15),
+transparent 40%),
+
+radial-gradient(circle at 50% 90%,
+rgba(255,255,255,.06),
+transparent 45%);
+
+z-index:-1;
+
+}
+
+/* ==========================
+         GLASS
+========================== */
+
+.glass{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(24px);
+
+-webkit-backdrop-filter:blur(24px);
+
+border:1px solid rgba(255,255,255,.18);
+
+border-radius:28px;
+
+box-shadow:
+
+0 10px 40px rgba(0,0,0,.30),
+
+inset 0 1px 1px rgba(255,255,255,.12);
+
+}
+
+/* ==========================
+      GLASS BUTTON
+========================== */
+
+.glass-btn{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:.5rem;
+
+padding:.85rem 1.8rem;
+
+border-radius:999px;
+
+border:1px solid rgba(255,255,255,.18);
+
+background:rgba(255,255,255,.10);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+color:#fff;
+
+font-size:15px;
+
+font-weight:500;
+
+cursor:pointer;
+
+transition:all .35s ease;
+
+box-shadow:
+
+0 8px 24px rgba(0,0,0,.18);
+
+}
+
+.glass-btn:hover{
+
+background:rgba(255,255,255,.18);
+
+border-color:rgba(255,255,255,.35);
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 15px 35px rgba(168,85,247,.35);
+
+}
+
+.glass-btn:active{
+
+transform:scale(.96);
+
+}
+
+/* ==========================
+     NAVBAR BUTTON
+========================== */
+
+.menu-btn{
+
+width:60px;
+
+height:60px;
+
+border-radius:50%;
+
+border:1px solid rgba(255,255,255,.18);
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(22px);
+
+-webkit-backdrop-filter:blur(22px);
+
+transition:.35s;
+
+}
+
+.menu-btn:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+
+0 0 30px rgba(168,85,247,.45);
+
+}
+
+/* ==========================
+       CARD HOVER
+========================== */
+
+.glass:hover{
+
+box-shadow:
+
+0 20px 60px rgba(168,85,247,.18);
+
+transition:.4s;
+
+}
+
+/* ==========================
+        BLOBS
+========================== */
+
+.blob{
+
+position:absolute;
+
+border-radius:9999px;
+
+filter:blur(120px);
+
+opacity:.28;
+
+pointer-events:none;
+
+}
+
+.blob-1{
+
+width:600px;
+
+height:600px;
+
+background:#8b5cf6;
+
+top:-5%;
+
+left:-10%;
+
+animation:floatSlow 12s ease-in-out infinite;
+
+}
+
+.blob-2{
+
+width:600px;
+
+height:600px;
+
+background:#ec4899;
+
+right:-10%;
+
+bottom:-10%;
+
+animation:floatSlowReverse 14s ease-in-out infinite;
+
+}
+
+@keyframes floatSlow{
+
+0%{
+transform:translate(0,0);
+}
+
+50%{
+transform:translate(35px,-35px);
+}
+
+100%{
+transform:translate(0,0);
+}
+
+}
+
+@keyframes floatSlowReverse{
+
+0%{
+transform:translate(0,0);
+}
+
+50%{
+transform:translate(-35px,35px);
+}
+
+100%{
+transform:translate(0,0);
+}
+
+}
+
+/* ==========================
+      RESPONSIVE
+========================== */
+
+@media(max-width:1024px){
+
+body{
+
+background-attachment:scroll;
+
+background-position:center;
+
+}
+
+.glass{
+
+backdrop-filter:blur(18px);
+
+}
+
+}
+
+@media(max-width:768px){
+
+body{
+
+background-size:cover;
+
+}
+
+.glass{
+
+padding:20px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.14);
+
+}
+
+.glass-btn{
+
+padding:.8rem 1.5rem;
+
+font-size:14px;
+
+}
+
+.menu-btn{
+
+width:54px;
+
+height:54px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.glass{
+
+border-radius:20px;
+
+}
+
+.glass-btn{
+
+padding:.75rem 1.3rem;
+
+font-size:13px;
+
+}
+
+}
